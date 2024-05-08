@@ -1,0 +1,53 @@
+https://www.linuxtechi.com/install-use-wireshark-ubuntu/
+
+
+http website : http://testphp.vulnweb.com/login.php
+
+https://linuxconfig.org/how-to-use-tcpdump-command-on-linux
+
+Wireshark Installation Steps
+
+$ sudo apt update
+$ sudo apt install wireshark
+
+Choose Yes to allow non-superusers to capture packets using wireshare
+
+ install latest version of wireshark
+
+$ sudo add-apt-repository ppa:wireshark-dev/stable
+$ sudo apt update
+$ sudo apt install wireshark -y
+$ wireshark --version
+
+To allow your regular user to use and capture packets using wireshark
+
+$ sudo dpkg-reconfigure wireshark-common
+
+local user to wireshark group using usermod command
+
+$ sudo usermod -aG wireshark $USER
+$ newgrp wireshark
+
+make above changes into the affect, reboot your system once.
+$ sudo reboot
+
+sudo apt install net-tools
+sudo apt install tcpdump
+tcpdump -D
+tcpdump -i enp0s3
+tcpdump -n -w traffic.pcap
+ tcpdump -n udp
+
+capture HTTP
+
+ sudo tcpdump -i enp0s3 -w http_traffic.pcap 'port 80'
+
+sudo tcpdump -i eno1 -G 3600 -W 6 -w Data-%Y-%m-%d_%H.%M.%S.pcap -s 96 'host 192.168.0.100 and ( port 80 or port 443 )'
+
+pwd to print current working directory
+
+http.request.method=="POST"
+
+tcp.stream eq0
+
+tcp.port==443
